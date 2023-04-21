@@ -191,33 +191,47 @@ class Move extends VacBotCommand {
     }
 }
 
-class MoveBackward extends Move {
+class MoveBackward extends VacBotCommand {
     constructor() {
-        super('backward');
+        super('move', {
+            'a': 0,
+            'act': 'backward'
+        });
     }
 }
 
-class MoveForward extends Move {
+class MoveForward extends VacBotCommand {
     constructor() {
-        super('forward');
+        super('move', {
+            'a': 0,
+            'act': 'forward'
+        });
     }
 }
 
-class MoveLeft extends Move {
+class MoveLeft extends VacBotCommand {
     constructor() {
-        super('left');
+        super('move', {
+            'a': 105,
+            'act': 'turnLeft'
+        });
     }
 }
 
-class MoveRight extends Move {
+class MoveRight extends VacBotCommand {
     constructor() {
-        super('right');
+        super('move', {
+            'a': 105,
+            'act': 'turnRight'
+        });
     }
 }
 
-class MoveTurnAround extends Move {
+class MoveStop extends VacBotCommand {
     constructor() {
-        super('turn_around');
+        super('move', {
+            'act': 'stop'
+        });
     }
 }
 
@@ -1182,7 +1196,7 @@ module.exports.MoveBackward = MoveBackward;
 module.exports.MoveForward = MoveForward;
 module.exports.MoveLeft = MoveLeft;
 module.exports.MoveRight = MoveRight;
-module.exports.MoveTurnAround = MoveTurnAround;
+module.exports.MoveStop = MoveStop;
 module.exports.Pause = Pause;
 module.exports.PlaySound = PlaySound;
 module.exports.Relocate = Relocate;
